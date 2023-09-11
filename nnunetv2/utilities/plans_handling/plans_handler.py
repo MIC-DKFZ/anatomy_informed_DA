@@ -278,10 +278,17 @@ class PlansManager(object):
     def label_manager_class(self) -> Type[LabelManager]:
         return get_labelmanager_class_from_plans(self.plans)
 
+    # def get_label_manager(self, dataset_json: dict, **kwargs) -> LabelManager:
+    #     return self.label_manager_class(label_dict=dataset_json['labels'],
+    #                                     regions_class_order=dataset_json.get('regions_class_order'),
+    #                                     **kwargs)
+
     def get_label_manager(self, dataset_json: dict, **kwargs) -> LabelManager:
-        return self.label_manager_class(label_dict=dataset_json['labels'],
-                                        regions_class_order=dataset_json.get('regions_class_order'),
-                                        **kwargs)
+        label_manager_instance = self.label_manager_class(label_dict=dataset_json['labels'],
+                                                          regions_class_order=dataset_json.get('regions_class_order'),
+                                                          **kwargs)
+        label_manager_instance._all_labels = label_manager_instance._all_labels[:2]
+        return label_manager_instance
 
     @property
     def foreground_intensity_properties_per_channel(self) -> dict:
