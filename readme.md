@@ -11,7 +11,7 @@ arXiv preprint arXiv:2309.03652 (2023).
 ```
 
 ## Usage
-<img src="documentation/assets/concept.png" height="325px" />
+<img src="documentation/assets/concept.png" width="800px" />
 
 To use the anatomy-informed augmentation during network training, your segmentation files need additional
 organ segmentations. In this current example, we add the rectum and bladder segmentations additionally to the
