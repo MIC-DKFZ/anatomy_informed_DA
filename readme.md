@@ -6,8 +6,9 @@ The data augmentation is presented on MICCAI 2023 in the proceedings of
 
 If you use this augmentation please cite the following work:
 ```
-Kovacs, Balint, et al. "Anatomy-informed Data Augmentation for Enhanced Prostate Cancer Detection."
-arXiv preprint arXiv:2309.03652 (2023).
+Kovacs, Balint, et al. "Anatomy-Informed Data Augmentation for Enhanced Prostate Cancer Detection."
+International Conference on Medical Image Computing and Computer-Assisted Intervention.
+Cham: Springer Nature Switzerland, 2023.
 ```
 
 ## Usage
