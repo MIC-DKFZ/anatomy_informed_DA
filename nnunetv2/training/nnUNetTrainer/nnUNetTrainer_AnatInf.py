@@ -33,8 +33,8 @@ from nnunetv2.training.data_augmentation.custom_transforms.cascade_transforms im
     ApplyRandomBinaryOperatorTransform, RemoveRandomConnectedComponentFromOneHotEncodingTransform
 from nnunetv2.training.data_augmentation.custom_transforms.deep_supervision_donwsampling import \
     DownsampleSegForDSTransform2
-from nnunetv2.training.data_augmentation.custom_transforms.limited_length_multithreaded_augmenter import \
-    LimitedLenWrapper
+# from nnunetv2.training.data_augmentation.custom_transforms.limited_length_multithreaded_augmenter import \
+#     LimitedLenWrapper
 from nnunetv2.training.data_augmentation.custom_transforms.masking import MaskTransform
 from nnunetv2.training.data_augmentation.custom_transforms.region_based_training import \
     ConvertSegmentationToRegionsTransform
@@ -71,14 +71,6 @@ class nnUNetTrainer_AnatInf(nnUNetTrainer):
                  device: torch.device = torch.device('cuda')):
         super().__init__(plans, configuration, fold, dataset_json, unpack_dataset, device)
         self.num_epochs = 3
-
-        # print("Labels:", self.label_manager._all_labels)
-        # self.label_manager._all_labels = self.label_manager._all_labels[:-2]
-        print("Labels!!!!!!!!!!:", self.label_manager._all_labels)
-
-
-
-        #self.configuration_manager = self.plans_manager.get_configuration(configuration)
 
     @staticmethod
     def build_network_architecture(plans_manager: PlansManager,
